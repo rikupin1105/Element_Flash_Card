@@ -41,6 +41,7 @@
                 BackgroundColor="#2196F3"
                 Command="{Binding NextCommand}"
                 CornerRadius="10"
+                HeightRequest="100"
                 Text="NEXT"
                 TextColor="White"
                 VerticalOptions="EndAndExpand" />
