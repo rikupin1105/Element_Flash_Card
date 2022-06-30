@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Element_Symbol_Flash_Card.View.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Element_Symbol_Flash_Card.ViewModel"
+    xmlns:mvvm="clr-namespace:Kamishibai.Xamarin.Forms.Mvvm;assembly=Kamishibai.Xamarin.Forms"
+    xmlns:views="clr-namespace:Element_Symbol_Flash_Card.View">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <mvvm:PushModalAsync x:TypeArguments="views:FlashCard1" Request="{Binding RequestSymbolToName}" />
+        <mvvm:PushModalAsync x:TypeArguments="views:FlashCard2" Request="{Binding RequestNameToSymbol}" />
+    </ContentPage.Behaviors>
+    <StackLayout>
+        <Frame
+            Margin="0,0,0,20"
+            Padding="24"
+            BackgroundColor="#2196F3"
+            CornerRadius="0">
+            <StackLayout>
+                <Label
+                    FontSize="36"
+                    HorizontalTextAlignment="Start"
+                    Text="元素"
+                    TextColor="White" />
+                <Label
+                    FontSize="36"
+                    HorizontalTextAlignment="Start"
+                    Text="フラッシュカード"
+                    TextColor="White" />
+            </StackLayout>
+        </Frame>
+
+        <Button
+            Margin="10,5,10,5"
+            BackgroundColor="#2196F3"
+            Command="{Binding SymbolToNameCommand}"
+            CornerRadius="10"
+            Font="20"
+            Text="元素記号 → 元素名"
+            TextColor="White" />
+        <Button
+            Margin="10,5,10,5"
+            BackgroundColor="#2196F3"
+            Command="{Binding SymbolToNameRandomCommand}"
+            CornerRadius="10"
+            Font="20"
+            Text="元素記号 → 元素名(ランダム)"
+            TextColor="White" />
+        <Button
+            Margin="10,5,10,5"
+            BackgroundColor="#2196F3"
+            Command="{Binding NameToSymbolCommand}"
+            CornerRadius="10"
+            Font="20"
+            Text="元素名 → 元素記号"
+            TextColor="White" />
+        <Button
+            Margin="10,5,10,5"
+            BackgroundColor="#2196F3"
+            Command="{Binding NameToSymbolRandomCommand}"
+            CornerRadius="10"
+            Font="20"
+            Text="元素名 → 元素記号(ランダム)"
+            TextColor="White" />
+    </StackLayout>
+</ContentPage>
