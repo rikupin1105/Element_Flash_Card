@@ -184,9 +184,9 @@ namespace Element_Symbol_Flash_Card.ViewModel
         }
         public async void End()
         {
-            await RequstBack.RaiseAsync();
+            await RequestBack.RaiseAsync();
         }
-        public INavigationRequest RequstBack { get; } = new NavigationRequest();
+        public INavigationRequest RequestBack { get; } = new NavigationRequest();
         public ReactiveCommand EndCommand { get; set; } = new ReactiveCommand();
         public ReactiveCommand NextCommand { get; set; } = new ReactiveCommand();
         public ReactiveProperty<string> ElementSymbol { get; set; } = new ReactiveProperty<string>();
