@@ -15,16 +15,5 @@ namespace Element_Symbol_Flash_Card.View
         {
             InitializeComponent();
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new FlashCard1();
-        }
-
-        private void Button_Clicked1(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new FlashCard1();
-
-        }
     }
 }
