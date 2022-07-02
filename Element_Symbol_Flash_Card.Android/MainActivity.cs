@@ -4,10 +4,12 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Google.Android.Material.Color;
+using Android.Views;
 
 namespace Element_Symbol_Flash_Card.Droid
 {
-    [Activity(Label = "元素フラッシュカード", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "元素フラッシュカード", Icon = "@drawable/icon", Theme = "@style/AppTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -17,7 +19,8 @@ namespace Element_Symbol_Flash_Card.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#2196f3"));
+            //DynamicColors.ApplyToActivityIfAvailable(this);
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#FEFBFF"));
 
             LoadApplication(new App());
         }
