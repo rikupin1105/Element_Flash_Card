@@ -1,4 +1,5 @@
-﻿using Element_Symbol_Flash_Card.View;
+﻿using Element_Symbol_Flash_Card.Model;
+using Element_Symbol_Flash_Card.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
