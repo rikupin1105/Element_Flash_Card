@@ -12,39 +12,22 @@
         <mvvm:PopModalAsync Request="{Binding RequestBack}" />
     </ContentPage.Behaviors>
     <ContentPage.Content>
-        <StackLayout>
-            <ProgressBar Progress="{Binding Progress.Value}" ProgressColor="#c34335" />
-            <Button
-                Margin="10,0,10,0"
-                BackgroundColor="#C34335"
-                Command="{Binding EndCommand}"
-                CornerRadius="10"
-                FontSize="Body"
-                HeightRequest="40"
-                HorizontalOptions="End"
-                Text="終了"
-                TextColor="White" />
-            <Label
-                FontSize="30"
-                HorizontalOptions="Center"
-                Text="{Binding ElementNumber.Value}" />
-            <Label
-                FontSize="100"
-                HorizontalOptions="Center"
-                Text="{Binding ElementSymbol.Value}" />
-            <Label
-                FontSize="30"
-                HorizontalOptions="Center"
-                Text="{Binding ElementName.Value}" />
-            <Button
-                Margin="10"
-                BackgroundColor="#2196F3"
-                Command="{Binding NextCommand}"
-                CornerRadius="10"
-                HeightRequest="100"
-                Text="NEXT"
-                TextColor="White"
-                VerticalOptions="EndAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Button BackgroundColor="Transparent" Command="{Binding NextCommand}" />
+            <StackLayout InputTransparent="True" VerticalOptions="Center">
+                <Label
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="{Binding ElementNumber.Value}" />
+                <Label
+                    FontSize="100"
+                    HorizontalOptions="Center"
+                    Text="{Binding ElementSymbol.Value}" />
+                <Label
+                    FontSize="40"
+                    HorizontalOptions="Center"
+                    Text="{Binding ElementName.Value}" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
