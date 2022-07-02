@@ -4,35 +4,17 @@ using Reactive.Bindings;
 using Element_Symbol_Flash_Card.View;
 using Kamishibai.Xamarin.Forms;
 using Kamishibai.Xamarin.Forms.Mvvm;
+using Element_Symbol_Flash_Card.Service;
 
 namespace Element_Symbol_Flash_Card.ViewModel
 {
-    internal class FlashCard1ViewModel : IPageInitializeAware<bool>
+    internal class FlashCard1ViewModel
     {
         public ReactiveProperty<double> Progress { get; set; } = new ReactiveProperty<double>(0);
         private int I { get; set; } = 0;
         private List<Model.Element> Date { get; set; }
         private bool IsAnswerDisplay { get; set; } = false;
-        public void OnInitialize(bool random)
-        {
-            if (random)
-            {
-                var rnd = new Random();
-                var newDate = new List<Model.Element>(118);
-                for (int i = 0; i < 118; i++)
-                {
-                    var r = rnd.Next(0, Date.Count);
-                    newDate.Add(Date[r]);
-                    Date.RemoveAt(r);
-                }
-                Date = newDate;
-            }
-
-            ElementSymbol.Value = Date[I].Symbol;
-            ElementNumber.Value = Date[I].Number;
-            NextCommand.Subscribe(_ => Next());
-            EndCommand.Subscribe(_ => End());
-        }
+        private bool IsDisplayedElementNumber { get; set; }
         public FlashCard1ViewModel()
         {
             Date = new List<Model.Element>
@@ -156,6 +138,32 @@ namespace Element_Symbol_Flash_Card.ViewModel
                 new Model.Element(117, "Ts", "テネシン"),
                 new Model.Element(118, "Og", "オガネソン")
             };
+
+            var setting = Xamarin.Forms.DependencyService.Get<ISettingService>().GetSetting();
+            if (setting.Random)
+            {
+                var rnd = new Random();
+                var newDate = new List<Model.Element>(118);
+                for (int i = 0; i < 118; i++)
+                {
+                    var r = rnd.Next(0, Date.Count);
+                    newDate.Add(Date[r]);
+                    Date.RemoveAt(r);
+                }
+                Date = newDate;
+            }
+            IsDisplayedElementNumber = setting.IsDisplayedElementNumber;
+
+            ElementSymbol.Value = Date[I].Symbol;
+            if (IsDisplayedElementNumber)
+            {
+                ElementNumber.Value = Date[I].Number;
+            }
+            else
+            {
+                ElementNumber.Value = null;
+            }
+            NextCommand.Subscribe(_ => Next());
         }
         public void Next()
         {
@@ -166,7 +174,14 @@ namespace Element_Symbol_Flash_Card.ViewModel
                 {
                     Progress.Value = I/118.0;
                     ElementSymbol.Value = Date[I].Symbol;
-                    ElementNumber.Value = Date[I].Number;
+                    if (IsDisplayedElementNumber)
+                    {
+                        ElementNumber.Value = Date[I].Number;
+                    }
+                    else
+                    {
+                        ElementNumber.Value = null;
+                    }
                     ElementName.Value = "";
                     IsAnswerDisplay = false;
                 }
@@ -177,6 +192,7 @@ namespace Element_Symbol_Flash_Card.ViewModel
             }
             else
             {
+                ElementNumber.Value = Date[I].Number;
                 ElementName.Value = Date[I].Name;
                 IsAnswerDisplay = true;
             }
@@ -186,10 +202,9 @@ namespace Element_Symbol_Flash_Card.ViewModel
             await RequestBack.RaiseAsync();
         }
         public INavigationRequest RequestBack { get; } = new NavigationRequest();
-        public ReactiveCommand EndCommand { get; set; } = new ReactiveCommand();
         public ReactiveCommand NextCommand { get; set; } = new ReactiveCommand();
         public ReactiveProperty<string> ElementSymbol { get; set; } = new ReactiveProperty<string>();
-        public ReactiveProperty<int> ElementNumber { get; set; } = new ReactiveProperty<int>();
+        public ReactiveProperty<int?> ElementNumber { get; set; } = new ReactiveProperty<int?>();
         public ReactiveProperty<string> ElementName { get; set; } = new ReactiveProperty<string>();
     }
 }
