@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Element_Symbol_Flash_Card.View.SettingView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Element_Symbol_Flash_Card.ViewModel"
+    xmlns:mvvm="clr-namespace:Kamishibai.Xamarin.Forms.Mvvm;assembly=Kamishibai.Xamarin.Forms">
+    <ContentPage.BindingContext>
+        <local:SettingViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <mvvm:PopModalAsync Request="{Binding RequestBack}" />
+    </ContentPage.Behaviors>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Padding="34">
+                <Label Text="設定" />
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="ランダム"
+                        VerticalTextAlignment="Center" />
+                    <Switch
+                        HorizontalOptions="EndAndExpand"
+                        IsToggled="{Binding Random.Value}"
+                        OnColor="#FFD6F8"
+                        ThumbColor="#7E4D7B" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="元素番号を表示する"
+                        VerticalTextAlignment="Center" />
+                    <Switch
+                        HorizontalOptions="EndAndExpand"
+                        IsToggled="{Binding IsDisplayedElementNumber.Value}"
+                        OnColor="#FFD6F8"
+                        ThumbColor="#7E4D7B" />
+                </StackLayout>
+                <Label Margin="0,20,0,20" Text="このアプリについて" />
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="バージョン"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        FontSize="20"
+                        HorizontalOptions="EndAndExpand"
+                        Text="1.0.1"
+                        VerticalTextAlignment="Center" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
