@@ -13,11 +13,14 @@
   <ItemGroup>
     <PackageReference Include="Kamishibai.Xamarin.Forms" Version="1.2.0" />
     <PackageReference Include="ReactiveProperty" Version="8.1.2" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="VIew\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="VIew\FlashCard2.xaml.cs">
       <DependentUpon>FlashCard2.xaml</DependentUpon>
     </Compile>
