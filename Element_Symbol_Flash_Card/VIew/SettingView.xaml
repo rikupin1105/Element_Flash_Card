@@ -18,41 +18,17 @@
             <StackLayout Padding="34">
                 <Label Text="設定" />
                 <StackLayout Orientation="Horizontal">
-                    <Label
-                        FontSize="20"
-                        HorizontalOptions="Start"
-                        Text="ランダム"
-                        VerticalTextAlignment="Center" />
-                    <Switch
-                        HorizontalOptions="EndAndExpand"
-                        IsToggled="{Binding Random.Value}"
-                        OnColor="#FFD6F8"
-                        ThumbColor="#7E4D7B" />
+                    <Label FontSize="20" HorizontalOptions="Start" Text="ランダム" VerticalTextAlignment="Center" />
+                    <Switch HorizontalOptions="EndAndExpand" IsToggled="{Binding Random.Value}" OnColor="#FFD6F8" ThumbColor="#7E4D7B" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label
-                        FontSize="20"
-                        HorizontalOptions="Start"
-                        Text="元素番号を表示する"
-                        VerticalTextAlignment="Center" />
-                    <Switch
-                        HorizontalOptions="EndAndExpand"
-                        IsToggled="{Binding IsDisplayedElementNumber.Value}"
-                        OnColor="#FFD6F8"
-                        ThumbColor="#7E4D7B" />
+                    <Label FontSize="20" HorizontalOptions="Start" Text="元素番号を表示する" VerticalTextAlignment="Center" />
+                    <Switch HorizontalOptions="EndAndExpand" IsToggled="{Binding IsDisplayedElementNumber.Value}" OnColor="#FFD6F8" ThumbColor="#7E4D7B" />
                 </StackLayout>
                 <Label Margin="0,20,0,20" Text="このアプリについて" />
                 <StackLayout Orientation="Horizontal">
-                    <Label
-                        FontSize="20"
-                        HorizontalOptions="Start"
-                        Text="バージョン"
-                        VerticalTextAlignment="Center" />
-                    <Label
-                        FontSize="20"
-                        HorizontalOptions="EndAndExpand"
-                        Text="1.0.1"
-                        VerticalTextAlignment="Center" />
+                    <Label FontSize="20" HorizontalOptions="Start" Text="バージョン" VerticalTextAlignment="Center" />
+                    <Label FontSize="20" HorizontalOptions="EndAndExpand" Text="1.0.3" VerticalTextAlignment="Center" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>
