@@ -139,7 +139,7 @@ namespace Element_Symbol_Flash_Card.ViewModel
                 new Model.Element(117, "Ts", "テネシン"),
                 new Model.Element(118, "Og", "オガネソン")
             };
-            var setting = Xamarin.Forms.DependencyService.Get<ISettingService>().GetSetting();
+            var setting = Microsoft.Maui.Controls.DependencyService.Get<ISettingService>().GetSetting();
 
             if (setting.Random)
             {

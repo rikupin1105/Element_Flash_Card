@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rikupin.element_symbol_flash_card" android:versionCode="6" android:versionName="1.1.1-release">
+	<application android:allowBackup="true" android:icon="@mipmap/appicon" android:supportsRtl="true" android:label="元素フラッシュカード"></application>
+</manifest>

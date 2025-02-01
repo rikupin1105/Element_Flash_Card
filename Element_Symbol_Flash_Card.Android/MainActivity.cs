@@ -6,11 +6,13 @@ using Android.Runtime;
 using Android.OS;
 using Google.Android.Material.Color;
 using Android.Views;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui;
 
 namespace Element_Symbol_Flash_Card.Droid
 {
     [Activity(Label = "元素フラッシュカード", Icon = "@drawable/icon", Theme = "@style/AppTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : Microsoft.Maui.MauiAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

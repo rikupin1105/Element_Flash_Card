@@ -11,7 +11,9 @@ using System.Text;
 using Element_Symbol_Flash_Card.Service;
 using Element_Symbol_Flash_Card.Droid;
 using Element_Symbol_Flash_Card.Model;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 [assembly: Dependency(typeof(SettingService))]
 namespace Element_Symbol_Flash_Card.Droid

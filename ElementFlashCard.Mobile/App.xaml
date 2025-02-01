@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application x:Class="ElementFlashCard.Mobile.App" xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ElementFlashCard.Mobile">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--  Light Theme  -->
+            <Color x:Key="PrimaryColor">#7E4D7B</Color>
+            <Color x:Key="SecondaryColor">#FFD6F8</Color>
+
+            <!--  Dark Theme  -->
+            <Color x:Key="PrimaryColorDark">#FFD6F8</Color>
+            <Color x:Key="SecondaryColorDark">#7E4D7B</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ElementFlashCard.Mobile.View.FlashCard1" xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ElementFlashCard.Mobile.ViewModel">
+    <ContentPage.Content>
+        <Grid>
+            <Button BackgroundColor="Transparent" Command="{Binding NextCommand}" Opacity="0" />
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Label FontSize="30" HorizontalOptions="Center" Text="{Binding ElementNumber.Value}" />
+                <Label FontSize="100" HorizontalOptions="Center" Text="{Binding ElementSymbol.Value}" />
+                <Label FontSize="40" HorizontalOptions="Center" Opacity="{Binding Opacity.Value}" Text="{Binding ElementName.Value}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

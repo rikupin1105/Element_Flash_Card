@@ -4,9 +4,11 @@ using Reactive.Bindings;
 using Element_Symbol_Flash_Card.View;
 using Kamishibai.Xamarin.Forms;
 using Kamishibai.Xamarin.Forms.Mvvm;
-using Xamarin.Forms;
 using Element_Symbol_Flash_Card.Service;
 using Element_Symbol_Flash_Card.Model;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace Element_Symbol_Flash_Card.ViewModel
 {

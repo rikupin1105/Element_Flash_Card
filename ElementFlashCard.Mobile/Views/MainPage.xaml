@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ElementFlashCard.Mobile.View.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ElementFlashCard.Mobile.ViewModel"
+    xmlns:views="clr-namespace:ElementFlashCard.Mobile.View">
+
+    <StackLayout Padding="20,50,20,50">
+        <StackLayout Padding="24">
+            <Label
+                Padding="0"
+                FontSize="36"
+                HorizontalTextAlignment="Start"
+                Text="元素"
+                VerticalTextAlignment="Center" />
+            <Label Padding="0" FontSize="36" HorizontalTextAlignment="Start" Text="フラッシュカード" />
+
+        </StackLayout>
+
+
+        <ScrollView>
+            <StackLayout>
+                <Button
+                    Margin="10,5,10,5"
+                    Padding="10"
+                    Command="{Binding SymbolToNameCommand}"
+                    CornerRadius="100"
+                    FontSize="20"
+                    Text="元素記号  から  元素名" />
+                <Button
+                    Margin="10,5,10,5"
+                    Padding="10"
+                    Command="{Binding NameToSymbolCommand}"
+                    CornerRadius="100"
+                    FontSize="20"
+                    Text="元素名  から  元素記号" />
+                <Button
+                    Margin="10,5,10,5"
+                    Padding="10"
+                    Command="{Binding SettingCommand}"
+                    CornerRadius="100"
+                    FontSize="20"
+                    Text="メニュー" />
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
