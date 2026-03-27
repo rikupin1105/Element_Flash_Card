@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ElementFlash.Views.MainPage"
+    Title="Element Flash"
+    Shell.NavBarIsVisible="False"
+    SafeAreaEdges="None">
+
+    <Grid SafeAreaEdges="All" RowDefinitions="Auto,*" Padding="20,16,20,24" RowSpacing="20">
+        <Border
+            Grid.Row="0"
+            Style="{StaticResource HeroCard}">
+            <VerticalStackLayout Spacing="12">
+                <Label
+                    Style="{StaticResource LabelSmall}"
+                    Text="ELEMENT FLASH"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Style="{StaticResource DisplayLarge}"
+                    Text="元素フラッシュカード" />
+                <Label
+                    Style="{StaticResource BodyMedium}"
+                    Text="Material You らしい落ち着いたレイアウトで、テンポよく暗記できます。" />
+            </VerticalStackLayout>
+        </Border>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="16">
+                <Border Style="{StaticResource SurfaceCard}">
+                    <VerticalStackLayout Spacing="16">
+                        <Label
+                            Style="{StaticResource TitleLarge}"
+                            Text="学習モード" />
+
+                        <Button
+                            Command="{Binding StartCommand}"
+                            CommandParameter="SymbolToElement"
+                            Text="記号から元素名へ" />
+
+                        <Button
+                            Style="{StaticResource FilledTonalButton}"
+                            Command="{Binding StartCommand}"
+                            CommandParameter="ElementToSymbol"
+                            Text="元素名から記号へ" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Style="{StaticResource SurfaceCard}">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                        <VerticalStackLayout Spacing="6">
+                            <Label
+                                Style="{StaticResource TitleMedium}"
+                                Text="学習設定" />
+                            <Label
+                                Style="{StaticResource BodyMedium}"
+                                Text="出題順や学習スタイルを調整できます。" />
+                        </VerticalStackLayout>
+
+                        <Button
+                            Grid.Column="1"
+                            Style="{StaticResource OutlinedButton}"
+                            Command="{Binding OpenSettingsCommand}"
+                            Text="設定" />
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

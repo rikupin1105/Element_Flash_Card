@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ElementFlash.Views.QuizPage"
+    Title="Quiz"
+    Shell.NavBarIsVisible="False"
+    SafeAreaEdges="None">
+
+    <Grid Padding="20,16,20,24" RowDefinitions="Auto,*" RowSpacing="20" SafeAreaEdges="All">
+        <Border
+            Grid.Row="0"
+            Style="{StaticResource SurfaceCard}"
+            Padding="16,14">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                <Border
+                    BackgroundColor="{AppThemeBinding Light={StaticResource TertiaryContainer}, Dark={StaticResource SurfaceContainerHighDark}}"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14"
+                    Padding="12,6">
+                    <Label
+                        Style="{StaticResource LabelSmall}"
+                        Text="No." />
+                </Border>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="2">
+                    <Label
+                        Style="{StaticResource TitleMedium}"
+                        Text="フラッシュ学習" />
+                    <Label
+                        Style="{StaticResource BodyMedium}"
+                        Text="タップで答えを表示、もう一度タップで次へ進みます。" />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CardTappedCommand}" />
+            </Grid.GestureRecognizers>
+
+            <Border Style="{StaticResource HeroCard}" VerticalOptions="Center">
+                <VerticalStackLayout Spacing="28">
+                    <VerticalStackLayout Spacing="8">
+                        <Label
+                            Style="{StaticResource LabelSmall}"
+                            HorizontalTextAlignment="Center"
+                            Text="ATOMIC NUMBER" />
+                        <Label
+                            FontFamily="NotoJP"
+                            FontSize="24"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding AtomicNumberText}"
+                            TextColor="{StaticResource Primary}" />
+                    </VerticalStackLayout>
+
+                    <Label
+                        x:Name="MainLabel"
+                        FontFamily="NotoJP"
+                        FontSize="72"
+                        HeightRequest="220"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        LineBreakMode="NoWrap"
+                        MaxLines="1"
+                        Text="{Binding MainText}"
+                        TextColor="{AppThemeBinding Light={StaticResource OnPrimaryContainer}, Dark={StaticResource OnBackgroundDark}}"
+                        VerticalTextAlignment="Center" />
+
+                    <Label
+                        Style="{StaticResource BodyMedium}"
+                        HorizontalTextAlignment="Center"
+                        Text="カード全体をタップしてください" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

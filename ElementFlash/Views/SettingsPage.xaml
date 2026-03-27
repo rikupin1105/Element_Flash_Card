@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ElementFlash.Views.SettingsPage"
+    Title="設定"
+    Shell.NavBarHasShadow="False"
+    Shell.NavBarIsVisible="False"
+    SafeAreaEdges="None">
+
+    <Grid Padding="20,16,20,24" RowDefinitions="Auto,*" RowSpacing="20" SafeAreaEdges="All">
+        <Border
+            Grid.Row="0"
+            Style="{StaticResource HeroCard}">
+            <VerticalStackLayout Spacing="10">
+                <Label
+                    Style="{StaticResource LabelSmall}"
+                    Text="SETTINGS"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Style="{StaticResource HeadlineMedium}"
+                    Text="学習設定" />
+                <Label
+                    Style="{StaticResource BodyMedium}"
+                    Text="クイズの出題順を、好みのテンポに合わせて切り替えられます。" />
+            </VerticalStackLayout>
+        </Border>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="16">
+                <Border Style="{StaticResource SurfaceCard}">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                        <VerticalStackLayout Spacing="6">
+                            <Label
+                                Style="{StaticResource TitleMedium}"
+                                Text="ランダム出題" />
+                            <Label
+                                Style="{StaticResource BodyMedium}"
+                                Text="元素をシャッフルして、毎回ちがう順番で学習します。" />
+                        </VerticalStackLayout>
+
+                        <Switch
+                            Grid.Column="1"
+                            HorizontalOptions="End"
+                            IsToggled="{Binding IsRandom}" />
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
